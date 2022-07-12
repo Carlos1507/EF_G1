@@ -14,8 +14,37 @@ import java.sql.SQLException;
 public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-        requestDispatcher.forward(request,response);
+        HttpSession session= request.getSession();
+        RolesEmpleadosDto usuario=(RolesEmpleadosDto)session.getAttribute("usuario");
+        //Borramos caché
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        response.setDateHeader("Expires", 0);
+        //Borramos caché
+        if(usuario!=null){
+            String action= request.getParameter("action")==null?"":request.getParameter("action");
+            switch (action){
+                case "logout"->{
+                    session.invalidate();
+                    response.sendRedirect(request.getContextPath());
+                }
+                default -> {
+                    if(usuario.getRol().getNombre().equals("vendedor")){
+                        response.sendRedirect(request.getContextPath()+"/RolVendedorServlet");
+                    }else{
+                        if(usuario.getRol().getNombre().equals("gestor")){
+                            response.sendRedirect(request.getContextPath()+"/RolGestorServlet");
+                        }else{
+                            response.sendRedirect(request.getContextPath());
+                        }
+                    }
+                }
+            }
+
+        }else{
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+            requestDispatcher.forward(request,response);
+        }
     }
 
     @Override
@@ -37,8 +66,6 @@ public class Login extends HttpServlet {
                         if(e.getE()!=null){
                             session= request.getSession();
                             session.setAttribute("usuario",e);
-                            System.out.println("Te logueaste!!");
-                            System.out.println("Rol: "+e.getRol().getNombre());
                             response.sendRedirect(request.getContextPath()+"/RolVendedorServlet");
                         }else{
                             System.out.println("No existes");

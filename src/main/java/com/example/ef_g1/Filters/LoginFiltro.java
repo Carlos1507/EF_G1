@@ -17,7 +17,7 @@ public class LoginFiltro implements Filter {
         HttpServletRequest req= (HttpServletRequest) request;
         RolesEmpleadosDto usuario= (RolesEmpleadosDto)req.getSession().getAttribute("usuario");
         if(usuario==null || usuario.getE()==null){
-            res.sendRedirect(res.getContentType());
+            res.sendRedirect(req.getContextPath());
         }else{
             if(usuario.getRol().getNombre().equals("vendedor")){
                 //Borramos caché
