@@ -14,7 +14,7 @@ public class ReportesServlet extends HttpServlet {
         String action = request.getParameter("action") == null ? "listar" : request.getParameter("action");
         ReportesDao reportesDao = new ReportesDao();
         if(action.equals("listar")){
-            request.setAttribute("sinjefe",reportesDao.cantidadEmpleadosSinJefe());
+            request.setAttribute("sinjefe", reportesDao.cantidadEmpleadosSinJefe());
             request.setAttribute("peliculas3d",reportesDao.cantidadPeliculas3D());
             request.setAttribute("empleados9700",reportesDao.cantidadEmpleados9700());
             request.setAttribute("cadena",reportesDao.obtenerCadena(reportesDao.idCadenaMayorCantidad()));

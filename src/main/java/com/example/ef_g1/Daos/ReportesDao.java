@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class ReportesDao extends BaseDao{
 
-    public Integer cantidadEmpleadosSinJefe(){
+    public int cantidadEmpleadosSinJefe(){
         int ola = 0;
         String sql = "select count(*) from empleado where idjefe is null";
         try (Connection conn = this.getConnection();

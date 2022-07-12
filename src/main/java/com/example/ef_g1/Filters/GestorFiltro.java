@@ -32,7 +32,7 @@ public class GestorFiltro implements Filter {
                 if(usuario.getRol().getNombre().equals("vendedor")){
                     res.sendRedirect(req.getContextPath()+"/RolVendedorServlet");
                 }else{
-                    res.sendRedirect(req.getContextPath());
+                    res.sendRedirect(req.getContextPath()+"/ReportesServlet");
                 }
             }
         }
