@@ -46,4 +46,56 @@ public class FuncionesDao extends BaseDao{
         }
         return carteleraFunciones;
     }
+
+
+    public ArrayList<Pelicula> listaPeliculas(){
+        ArrayList<Pelicula> listaPelis = new ArrayList<>();
+        String sql = "select * from pelicula";
+        try(Connection conn = this.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql)){
+            try(ResultSet rs = pstmt.executeQuery()){
+                while (rs.next()){
+                    Pelicula pelicula = new Pelicula();
+                    pelicula.setIdPelicula(rs.getInt(1));
+                    pelicula.setNombre(rs.getString(2));
+                    listaPelis.add(pelicula);
+                }
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return listaPelis;
+    }
+
+    public ArrayList<Cine> listaCines(){
+        ArrayList<Cine> listaCines = new ArrayList<>();
+        String sql = "select * from cine";
+        try(Connection conn = this.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            try(ResultSet rs = pstmt.executeQuery()){
+                while (rs.next()){
+                    Cine cine = new Cine();
+                    Cadena cadena = new Cadena();
+                    cine.setIdCine(rs.getInt(1));
+                    cine.setNombre(rs.getString(2));
+                    cadena.setIdCadena(rs.getInt(3));
+                    cine.setCadena(cadena);
+                    listaCines.add(cine);
+                }
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return listaCines;
+    }
+    public void eliminarCartelera(int idCartelera){
+        String sql = "delete from cartelera where idCartelera = ?";
+        try(Connection conn = this.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setInt(idCartelera, 1);
+            pstmt.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
