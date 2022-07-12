@@ -55,10 +55,14 @@
     }
 </STYLE>
 <br><br><br>
+<div align="center">
+    <a  type="submit"
+        href=""
+        name="reporte"
+        class="btn btn-tele border-start-1"
+    > Crear Función</a></div>
+<br>
 
-</table>
-</form>
-</center>
 <br><br>
 <br><br>
 <center>
