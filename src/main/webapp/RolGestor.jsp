@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.ef_g1.Beans.Cartelera" %><%--
   Created by IntelliJ IDEA.
   User: Niurka
   Date: 12/07/2022
