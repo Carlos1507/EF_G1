@@ -21,20 +21,35 @@
 <div class="modal-dialog modalCenter">
     <div class="modal-content" style="background: #000000">
         <div class="modal-body" >
-            <form>
+            <form method="post" action="<%=request.getContextPath()%>/?action=login">
 
                 <br>
                 <h4 class="d-flex justify-content-center" style="color:white">Iniciar Sesión</h4>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput1" placeholder="User">
+                    <input name="user" type="text" class="form-control" id="floatingInput1" placeholder="User">
                     <label for="floatingInput1">Usuario</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingInput2" placeholder="Password">
+                    <input name="pass" type="password" class="form-control" id="floatingInput2" placeholder="Password">
                     <label for="floatingInput2">Contraseña</label>
                 </div>
-                <a href="Pagina_principal.html" class="btn btn-danger rounded-pill botonInicio border border-primary" style="transform: translateX(230%); background-color: black; color: #0d6efd">Ingresar</a>
+                <%if(session.getAttribute("msg")!=null){%>
+                    <%if(session.getAttribute("msg").equals("errorNumero")){%>
+                    <div class="text-danger mb-2">DNI y Contraseña deben ser números</div>
+                    <%}%>
+                    <%if(session.getAttribute("msg").equals("errorSQL")){%>
+                    <div class="text-danger mb-2">Error de conexión con la base de Datos</div>
+                    <%}%>
+                    <%if(session.getAttribute("msg").equals("errorDNItam")){%>
+                    <div class="text-danger mb-2">El DNI debe ser de 8 dígitos</div>
+                    <%}%>
+                    <%if(session.getAttribute("msg").equals("noExiste")){%>
+                    <div class="text-danger mb-2">Usuario y/o Contraseña incorrectos</div>
+                    <%}%>
+                <%session.removeAttribute("msg"); session.invalidate();%>
+                <%}%>
 
+                <button type="submit" class="btn btn-danger rounded-pill botonInicio border border-primary" style="transform: translateX(230%); background-color: black; color: #0d6efd">Ingresar</button>
             </form>
         </div>
     </div>
