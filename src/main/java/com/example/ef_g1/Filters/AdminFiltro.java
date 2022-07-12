@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "LoginFiltro", value = {"/RolVendedorServlet"})
-public class LoginFiltro implements Filter {
+@WebFilter(filterName = "AdminFiltro", value = {"/ReportesServlet"})
+public class AdminFiltro implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
@@ -19,7 +19,7 @@ public class LoginFiltro implements Filter {
         if(usuario==null || usuario.getE()==null){
             res.sendRedirect(req.getContextPath());
         }else{
-            if(usuario.getRol().getNombre().equals("vendedor")){
+            if(usuario.getRol().getNombre().equals("admin")){
                 //Borramos caché
                 res.setHeader("Pragma", "No-cache");
                 res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -30,7 +30,8 @@ public class LoginFiltro implements Filter {
                 if(usuario.getRol().getNombre().equals("gestor")){
                     res.sendRedirect(req.getContextPath()+"/RolGestorServlet");
                 }else{
-                    res.sendRedirect(req.getContextPath()+"/ReportesServlet");
+                    System.out.println("No es gestor ");
+                    res.sendRedirect(req.getContextPath()+"/RolVendedorServlet");
                 }
             }
         }

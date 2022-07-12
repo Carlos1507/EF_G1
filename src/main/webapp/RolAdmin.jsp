@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.ef_g1.Beans.Cartelera" %><%--
   Created by IntelliJ IDEA.
   User: Niurka
   Date: 12/07/2022
@@ -54,13 +54,14 @@
         color: white;
     }
 </STYLE>
-<br><br><br>
-<div align="right">
-<a  type="submit"
-    href=""
-    name="reporte"
-    class="btn btn-tele border-start-1"
-> Ir a Reporte </a></div>
+<br><br><br><br><br><br>
+<div align="center">
+    <a  type="submit"
+        href=""
+        name="reporte"
+        class="btn btn-tele border-start-1"
+    > Crear Función</a></div>
+<br>
 
 </table>
 </form>
