@@ -7,10 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="sinjefe" type="java.lang.Integer" class="java.lang.Integer"/>
-<jsp:useBean id="peliculas3d" type="java.lang.Integer" class="java.lang.Integer"/>
-<jsp:useBean id="empleados9700" type="java.lang.Integer" class="java.lang.Integer"/>
-<jsp:useBean id="cadena" type="com.example.ef_g1.Beans.Cadena" class="com.example.ef_g1.Beans.Cadena"/>
+<jsp:useBean id="sinjefe" scope="request" type="java.lang.Integer" class="java.lang.Integer"/>
+<jsp:useBean id="peliculas3d" scope="request" type="java.lang.Integer" class="java.lang.Integer"/>
+<jsp:useBean id="empleados9700" scope="request" type="java.lang.Integer" class="java.lang.Integer"/>
+<jsp:useBean id="cadena" scope="request" type="com.example.ef_g1.Beans.Cadena" class="com.example.ef_g1.Beans.Cadena"/>
 <jsp:include page="head.jsp">
     <jsp:param name="title" value="index"/>
 </jsp:include>
