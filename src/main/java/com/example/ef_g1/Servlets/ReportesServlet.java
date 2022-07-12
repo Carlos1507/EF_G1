@@ -33,7 +33,7 @@ public class ReportesServlet extends HttpServlet {
                 String eso = request.getParameter("ola");
                 if (eso != null){
                     request.setAttribute("empleadosSinJefe",reportesDao.obtenerEmpleadosSinJefe());
-                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("Empleados.jsp");
                     requestDispatcher.forward(request,response);
                 }else {
                     response.sendRedirect(request.getContextPath()+"/ReportesServlet");
