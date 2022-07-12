@@ -72,10 +72,10 @@
             <tr class="clase">
                 <th class="clase">Nombre de la Película</th >
             </tr>
-            <tr>
-                <td>Thor love and thunder</td>
-            </tr>
             </thead>
+            <tr class="clase">
+                <td class="clase">Thor love and thunder</td>
+            </tr>
         </table>
     </div>
 </center>
