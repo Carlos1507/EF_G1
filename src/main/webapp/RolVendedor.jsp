@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.ef_g1.Beans.Cartelera" %><%--
   Created by IntelliJ IDEA.
   User: Niurka
   Date: 12/07/2022
@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="ListaCartelera" scope="request" type="java.util.ArrayList<com.example.ef_g1.Beans.Cartelera>"/>
 <jsp:include page="head.jsp">
     <jsp:param name="title" value="index"/>
 </jsp:include>
@@ -70,12 +71,37 @@
         <table class="clase">
             <thead class="clase">
             <tr class="clase">
-                <th class="clase">Nombre de la Película</th >
+                <th class="clase">Cadena</th >
+                <th class="clase">Cine</th >
+                <th class="clase">Película</th >
+                <th class="clase">Horario</th >
             </tr>
             </thead>
+            <tbody>
+            <% for(Cartelera cartelera : ListaCartelera){ %>
             <tr class="clase">
-                <td class="clase">Thor love and thunder</td>
+                <td class="clase"><%=cartelera.getCine().getCadena().getNombreComercial()%></td>
+                <td class="clase"><%=cartelera.getCine().getNombre()%></td>
+            <%String nombrePeli = "";
+              nombrePeli+=cartelera.getPelicula().getNombre();
+              if(cartelera.getTresD()==1){
+                  nombrePeli+=" - 3D";
+              }else{
+                  nombrePeli+=" -";
+              }
+              if(cartelera.getSubtitulada()==1){
+                  nombrePeli+=" Subtitulada";
+              }
+              if(cartelera.getDoblada()==1){
+                  nombrePeli+=" Doblada";
+              }
+              nombrePeli+=".";
+            %>
+                <td class="clase"><%=nombrePeli%></td>
+                <td class="clase"><%=cartelera.getHorario()%></td>
             </tr>
+            <%}%>
+            </tbody>
         </table>
     </div>
 </center>
