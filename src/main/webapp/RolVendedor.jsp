@@ -41,7 +41,7 @@
         padding: 20px;
     }
     thead.clase{
-        background-color: #000000;
+        background-color: #052434;
         border-bottom: solid 5px #353837;
         color: white;
     }

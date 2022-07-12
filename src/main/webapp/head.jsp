@@ -57,21 +57,21 @@
             transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
         }
         .btn-tele {
-            border-color: #000000FF;
-            background-color: #000000FF;
+            border-color: #052434;
+            background-color: #052434;
             color: white;
         }
         .btn-tele:hover {
             color: #fff;
             background-color:#525252;
-            border-color: #000000FF;
+            border-color: #052434;
         }
         .btn-check:focus + .btn-tele,
         .btn-tele:focus {
             color: #fff;
             background-color: #525252;
-            border-color: #090909;
-            box-shadow: 0 0 0 0.2rem #000000FF;
+            border-color: #052434;
+            box-shadow: 0 0 0 0.2rem #052434;
         }
         .btn-check:active + .btn-tele,
         .btn-check:checked + .btn-tele,
@@ -79,46 +79,46 @@
         .btn-tele:active,
         .show > .btn-tele.dropdown-toggle {
             color: #fff;
-            background-color: #000000FF;
-            border-color: #000000FF;
+            background-color: #052434;
+            border-color: #052434;
         }
         .btn-check:active + .btn-tele:focus,
         .btn-check:checked + .btn-tele:focus,
         .btn-tele.active:focus,
         .btn-tele:active:focus,
         .show > .btn-tele.dropdown-toggle:focus {
-            box-shadow: 0 0 0 0.2rem #000000FF;
+            box-shadow: 0 0 0 0.2rem #052434;
         }
         .btn-tele.disabled,
         .btn-tele:disabled {
             color: #fff;
-            border-color: #000000FF;
-            background-color: #000000FF;
+            border-color: #052434;
+            background-color: #052434;
         }
         .btn-tele-inverso {
             background-color: white;
-            color: #000000FF;
+            color: #052434;
         }
         .btn-tele-inverso:hover {
-            color: #000000FF;
+            color: #052434;
         }
         .btn-check:focus + .btn-tele-inverso,
         .btn-tele-inverso:focus {
-            color: #000000FF;
+            color: #052434;
         }
         .btn-check:active + .btn-tele-inverso,
         .btn-check:checked + .btn-tele-inverso,
         .btn-tele-inverso.active,
         .btn-tele-inverso:active,
         .show > .btn-tele-inverso.dropdown-toggle {
-            color:#000000FF;
+            color: #052434;
         }
         .btn-check:active + .btn-tele-inverso:focus,
         .btn-check:checked + .btn-tele-inverso:focus,
         .btn-tele-inverso.active:focus,
         .btn-tele-inverso:active:focus,
         .show > .btn-tele-inverso.dropdown-toggle:focus {
-            box-shadow: 0 0 0 0.2rem #000000FF;
+            box-shadow: 0 0 0 0.2rem #052434;
         }
         /*Desactivar sombra de botones*/
         .btn:focus,
