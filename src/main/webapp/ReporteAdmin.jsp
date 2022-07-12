@@ -66,7 +66,15 @@
     </STYLE>
 </head>
 <body>
-<br><br><br><br>
+<br><br><br><br><br><br>
+<div align="center">
+    <a  type="submit"
+        href=""
+        name="reporte"
+        class="btn btn-tele border-start-1"
+    > Ir a Funciones</a></div>
+<br>
+
 <h2>Cantidad de empleados sin jefe: </h2>
 <form method="post" action="<%=request.getContextPath()%>/ReportesServlet?action=listar1">
     <input type="hidden" name="ola">
