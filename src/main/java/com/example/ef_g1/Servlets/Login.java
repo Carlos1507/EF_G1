@@ -66,7 +66,7 @@ public class Login extends HttpServlet {
                         if(e.getE()!=null){
                             session= request.getSession();
                             session.setAttribute("usuario",e);
-                            response.sendRedirect(request.getContextPath()+"/RolVendedorServlet");
+                            response.sendRedirect(request.getContextPath()+"/RolGestorServlet");
                         }else{
                             System.out.println("No existes");
                             session= request.getSession();

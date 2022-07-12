@@ -13,11 +13,22 @@ public class RolGestorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action")==null?"listar":request.getParameter("action");
         FuncionesDao funcionesDao = new FuncionesDao();
+        RequestDispatcher view;
         switch (action){
             case "listar"->{
                 request.setAttribute("ListaCartelera",funcionesDao.listarFuncionesCartelera());
-                RequestDispatcher view = request.getRequestDispatcher("RolGestor.jsp");
+                view = request.getRequestDispatcher("RolGestor.jsp");
                 view.forward(request, response);
+            }
+            case "crear"->{
+                request.setAttribute("listaCines", funcionesDao.listaCines());
+                request.setAttribute("listaPeliculas", funcionesDao.listaPeliculas());
+                view = request.getRequestDispatcher("Formulario.jsp");
+                view.forward(request, response);
+            }
+            case "eliminar" -> {
+                request.getParameter("id")
+                funcionesDao.
             }
             default -> {response.sendRedirect(request.getContextPath());}
         }

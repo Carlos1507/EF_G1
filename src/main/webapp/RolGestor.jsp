@@ -54,24 +54,20 @@
         color: white;
     }
 </STYLE>
-<br><br><br>
+<br><br><br><br><br>
 <div align="center">
     <a  type="submit"
-        href=""
-        name="reporte"
+        href="<%=request.getContextPath()%>/RolGestorServlet?action=crear"
         class="btn btn-tele border-start-1"
     > Crear Función</a></div>
 <br>
 
-<br><br>
-<br><br>
 <center>
     <h1><b><font color="Black">PELÍCULAS EN CARTELERA</font> </b></h1>
 </center>
 <br>
 <center>
     <div id="main-container" >
-
         <table class="clase">
             <thead class="clase">
             <tr class="clase">
@@ -131,13 +127,10 @@
     EDITAR
     <center>
         <form style="width: 70%">
-
             <input type="text" id="nombrespelicula" class="form-control" placeholder="Nombres"required/>
-
         </form>
     </center>
     <div><button class="btn btn-tele border-start-1" type="submit" >Editar </button></div>
-
 </div>
 
 <div class="delete" id="dele">
@@ -150,11 +143,9 @@
         </center>
     </center>
     <div><button class="btn btn-tele border-start-1" type="submit" >Editar </button></div>
-
 </div>
 
 <Script>
-
     function abrirEditar() {
         document.getElementById("edit").style.display="block";
     }

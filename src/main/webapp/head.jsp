@@ -15,7 +15,6 @@
     <title><%=request.getParameter("title")%>
     </title>
 
-
     <style>
         .container {
             padding-right: 0 !important;
