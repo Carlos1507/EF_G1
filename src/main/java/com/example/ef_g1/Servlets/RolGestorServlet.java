@@ -19,6 +19,7 @@ public class RolGestorServlet extends HttpServlet {
                 RequestDispatcher view = request.getRequestDispatcher("RolGestor.jsp");
                 view.forward(request, response);
             }
+            default -> {response.sendRedirect(request.getContextPath());}
         }
     }
 

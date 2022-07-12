@@ -16,9 +16,9 @@ public class GestorFiltro implements Filter {
         HttpServletResponse res= (HttpServletResponse) response;
         HttpServletRequest req= (HttpServletRequest) request;
         RolesEmpleadosDto usuario= (RolesEmpleadosDto)req.getSession().getAttribute("usuario");
-        System.out.println("ROL: "+usuario.getRol().getNombre());
+
         if(usuario==null || usuario.getE()==null){
-            res.sendRedirect(res.getContentType());
+            res.sendRedirect(req.getContextPath());
         }else{
 
             if(usuario.getRol().getNombre().equals("gestor")){
