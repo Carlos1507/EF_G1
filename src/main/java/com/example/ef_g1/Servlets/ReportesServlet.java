@@ -18,7 +18,7 @@ public class ReportesServlet extends HttpServlet {
             request.setAttribute("peliculas3d",reportesDao.cantidadPeliculas3D());
             request.setAttribute("empleados9700",reportesDao.cantidadEmpleados9700());
             request.setAttribute("cadena",reportesDao.obtenerCadena(reportesDao.idCadenaMayorCantidad()));
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("ReporteAdmin.jsp");
             requestDispatcher.forward(request,response);
         }
     }
