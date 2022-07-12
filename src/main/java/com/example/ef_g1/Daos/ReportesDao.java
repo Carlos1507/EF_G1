@@ -85,7 +85,7 @@ public class ReportesDao extends BaseDao{
         ArrayList<Empleado> empleados = new ArrayList<>();
         int jin = 0;
         Boolean o = false;
-        String sql = "select * from empleado where idjefe is null";
+        String sql = "select * from empleado e, cine c where e.idcine = c.idcine and  e.idjefe is null";
         try (Connection conn = this.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet resultSet = stmt.executeQuery(sql)) {
@@ -104,7 +104,7 @@ public class ReportesDao extends BaseDao{
                 else o = false;
                 e.setActivo(o);
                 Cine cine = new Cine();
-                cine.setIdCine(resultSet.getInt(10));
+                cine.setNombre(resultSet.getString(13));
                 e.setCine(cine);
                 empleados.add(e);
             }
