@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="listaCines" scope="request" type="java.util.ArrayList<com.example.ef_g1.Beans.Cine>"/>
+<jsp:useBean id="listaPeliculas" scope="request" type="java.util.ArrayList<com.example.ef_g1.Beans.Pelicula>"/>
+
 <jsp:include page="head.jsp">
     <jsp:param name="title" value="index"/>
 </jsp:include>
